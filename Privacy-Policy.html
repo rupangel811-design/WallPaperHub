@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - WallpaperHub</title>
+  <style>
+    :root {
+      --dark-navy: #0A0F1F;
+      --light-gray: #E6E9F0;
+      --soft-blue: #3E5CFF;
+      --border-color: #1C243A;
+      --card-bg: #12182F;
+      --success: #4cc9f0;
+      --border-radius: 12px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--light-gray);
+      background: var(--dark-navy);
+      padding: 20px;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px 20px;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+    }
+    
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--soft-blue);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .logo-icon {
+      font-size: 2.8rem;
+    }
+    
+    h1 {
+      color: var(--light-gray);
+      margin-bottom: 10px;
+      font-size: 2.2rem;
+    }
+    
+    .subtitle {
+      color: #b0b8d0;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .policy-container {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 30px;
+    }
+    
+    .sidebar {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 25px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .nav-list {
+      list-style: none;
+    }
+    
+    .nav-item {
+      margin-bottom: 12px;
+    }
+    
+    .nav-link {
+      display: block;
+      padding: 12px 15px;
+      color: var(--light-gray);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .nav-link:hover, .nav-link.active {
+      background: var(--soft-blue);
+      color: white;
+    }
+    
+    .content {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .section {
+      margin-bottom: 40px;
+      scroll-margin-top: 20px;
+    }
+    
+    h2 {
+      color: var(--soft-blue);
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    h2 i {
+      font-size: 1.4rem;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      color: #b0b8d0;
+    }
+    
+    .highlight-box {
+      background: rgba(62, 92, 255, 0.1);
+      border-left: 4px solid var(--soft-blue);
+      padding: 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+    
+    .permission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 25px 0;
+    }
+    
+    .permission-card {
+      background: var(--dark-navy);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: var(--transition);
+      border: 1px solid var(--border-color);
+    }
+    
+    .permission-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .permission-icon {
+      font-size: 2.5rem;
+      color: var(--soft-blue);
+      margin-bottom: 15px;
+    }
+    
+    .permission-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--light-gray);
+    }
+    
+    .service-list {
+      list-style: none;
+      margin: 20px 0;
+    }
+    
+    .service-item {
+      padding: 15px;
+      background: var(--dark-navy);
+      border-radius: 8px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--soft-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .service-details h4 {
+      margin-bottom: 5px;
+      color: var(--light-gray);
+    }
+    
+    .service-details p {
+      margin: 0;
+      color: #b0b8d0;
+      font-size: 0.9rem;
+    }
+    
+    .service-details a {
+      color: var(--soft-blue);
+      text-decoration: none;
+    }
+    
+    .service-details a:hover {
+      text-decoration: underline;
+    }
+    
+    .data-usage {
+      display: flex;
+      gap: 20px;
+      margin: 25px 0;
+    }
+    
+    .data-card {
+      flex: 1;
+      background: var(--dark-navy);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid var(--border-color);
+    }
+    
+    .data-card.yes {
+      border-top: 4px solid #4ade80;
+    }
+    
+    .data-card.no {
+      border-top: 4px solid #f87171;
+    }
+    
+    .data-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: var(--light-gray);
+    }
+    
+    .data-list {
+      text-align: left;
+      list-style: none;
+      margin-top: 15px;
+    }
+    
+    .data-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-color);
+      color: #b0b8d0;
+    }
+    
+    .data-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .contact-card {
+      background: linear-gradient(135deg, var(--soft-blue) 0%, #2a4aff 100%);
+      color: white;
+      border-radius: var(--border-radius);
+      padding: 25px;
+      margin-top: 30px;
+      text-align: center;
+    }
+    
+    .contact-card h3 {
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      color: #b0b8d0;
+      font-size: 0.9rem;
+    }
+    
+    .last-updated {
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid var(--border-color);
+    }
+    
+    .update-badge {
+      background: var(--success);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .legal-basis {
+      background: rgba(255, 193, 7, 0.1);
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+
+    .user-rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .right-card {
+      background: rgba(76, 201, 240, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid rgba(76, 201, 240, 0.3);
+    }
+
+    .right-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--soft-blue);
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    
+    ul li {
+      color: #b0b8d0;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .policy-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .sidebar {
+        position: static;
+      }
+      
+      .permission-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .data-usage {
+        flex-direction: column;
+      }
+      
+      .last-updated {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .user-rights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="last-updated">
+      <div>
+        <strong>Effective Date:</strong> 10 November 2025
+      </div>
+      <div class="update-badge">Recently Updated</div>
+    </div>
+    
+    <header>
+      <div class="logo">
+        <span class="logo-icon">🖼️</span>
+        WallpaperHub
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">We value your privacy. This policy explains what data we collect, how we use it, and your rights.</p>
+    </header>
+    
+    <div class="policy-container">
+      <nav class="sidebar">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#intro" class="nav-link active">Introduction</a></li>
+          <li class="nav-item"><a href="#wallpapers" class="nav-link">Wallpaper Types</a></li>
+          <li class="nav-item"><a href="#info-collected" class="nav-link">Information We Collect</a></li>
+          <li class="nav-item"><a href="#third-party" class="nav-link">Third-Party Services</a></li>
+          <li class="nav-item"><a href="#data-usage" class="nav-link">How We Use Data</a></li>
+          <li class="nav-item"><a href="#legal-basis" class="nav-link">Legal Basis</a></li>
+          <li class="nav-item"><a href="#user-rights" class="nav-link">Your Rights</a></li>
+          <li class="nav-item"><a href="#data-retention" class="nav-link">Data Retention</a></li>
+          <li class="nav-item"><a href="#security" class="nav-link">Security & Storage</a></li>
+          <li class="nav-item"><a href="#children" class="nav-link">Children's Privacy</a></li>
+          <li class="nav-item"><a href="#changes" class="nav-link">Policy Changes</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      
+      <main class="content">
+        <section id="intro" class="section">
+          <h2><i>📋</i> Introduction</h2>
+          <p>Welcome to <strong>WallpaperHub</strong>! We're committed to protecting your privacy while providing you with beautiful wallpapers for your device.</p>
+          <p>This Privacy Policy explains how we handle information when you use our app. We've designed it to be clear and easy to understand.</p>
+          <div class="highlight-box">
+            <p><strong>Key Point:</strong> We don't require any login or signup, and we don't collect personal information like your name, email, or address.</p>
+          </div>
+        </section>
+        
+        <section id="wallpapers" class="section">
+          <h2><i>🖼️</i> Types of Wallpapers</h2>
+          <p>Our app provides two types of wallpapers:</p>
+          
+          <div class="permission-grid">
+            <div class="permission-card">
+              <div class="permission-icon">🤖</div>
+              <div class="permission-title">AI-Generated Wallpapers</div>
+              <p>Created using AI tools within our app. These images are generated automatically and don't contain any personal data.</p>
+            </div>
+            
+            <div class="permission-card">
+              <div class="permission-icon">🌐</div>
+              <div class="permission-title">API-Fetched Wallpapers</div>
+              <p>Sourced from trusted providers like Pixels API. We display these for you to download or set as wallpaper.</p>
+            </div>
+          </div>
+          
+          <p>Both types are safe to use and don't expose or collect any personal information from you.</p>
+        </section>
+        
+        <section id="info-collected" class="section">
+          <h2><i>🔍</i> Information We Collect</h2>
+          <p>To provide our services, we need certain permissions. Here's what we access and why:</p>
+          
+          <div class="permission-grid">
+            <div class="permission-card">
+              <div class="permission-icon">💾</div>
+              <div class="permission-title">Storage Access</div>
+              <p>To save wallpapers to your device when you download them.</p>
+            </div>
+            
+            <div class="permission-card">
+              <div class="permission-icon">📱</div>
+              <div class="permission-title">Wallpaper Setting</div>
+              <p>To set wallpapers directly from the app to your home or lock screen.</p>
+            </div>
+            
+            <div class="permission-card">
+              <div class="permission-icon">📶</div>
+              <div class="permission-title">Internet Access</div>
+              <p>To fetch wallpapers and load content.</p>
+            </div>
+            
+            <div class="permission-card">
+              <div class="permission-icon">🔔</div>
+              <div class="permission-title">Notifications</div>
+              <p>To send you alerts about new wallpapers and features (you can turn these off).</p>
+            </div>
+          </div>
+          
+          <div class="highlight-box">
+            <p><strong>Important:</strong> We don't collect personal information like your name, email, or address. The app has no login system.</p>
+          </div>
+        </section>
+        
+        <section id="third-party" class="section">
+          <h2><i>🤝</i> Third-Party Services</h2>
+          <p>We work with these trusted partners to enhance your experience:</p>
+          
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon">P</div>
+              <div class="service-details">
+                <h4>Pixels API</h4>
+                <p>Provides high-quality wallpapers from external sources</p>
+              </div>
+            </li>
+            
+            <li class="service-item">
+              <div class="service-icon">F</div>
+              <div class="service-details">
+                <h4>Firebase (Google)</h4>
+                <p>Handles notifications, crash reports, and basic analytics</p>
+                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">View their Privacy Policy</a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="highlight-box">
+            <p><strong>Data Transfer Note:</strong> As we use third-party services, your anonymous data may be processed outside your country of residence in compliance with international data protection standards.</p>
+          </div>
+        </section>
+        
+        <section id="data-usage" class="section">
+          <h2><i>📊</i> How We Use Your Information</h2>
+          <p>The limited information we collect helps us:</p>
+          <ul>
+            <li>Download, display, and set wallpapers on your device</li>
+            <li>Understand how the app is used to make it better</li>
+            <li>Send optional notifications about new content</li>
+            <li>Fix bugs and improve app stability</li>
+          </ul>
+          
+          <div class="data-usage">
+            <div class="data-card yes">
+              <div class="data-title">What We Collect</div>
+              <ul class="data-list">
+                <li>App permissions (as explained above)</li>
+                <li>Anonymous usage data</li>
+                <li>Crash reports</li>
+                <li>Device information (model, OS version)</li>
+              </ul>
+            </div>
+            
+            <div class="data-card no">
+              <div class="data-title">What We Don't Collect</div>
+              <ul class="data-list">
+                <li>Your name or email</li>
+                <li>Phone number</li>
+                <li>Location data</li>
+                <li>Personal files</li>
+                <li>Contact information</li>
+                <li>Advertising ID</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="legal-basis" class="section">
+          <h2><i>⚖️</i> Legal Basis for Processing</h2>
+          <p>We process your data based on the following legal grounds:</p>
+          
+          <div class="legal-basis">
+            <p><strong>Consent:</strong> For notifications - you can withdraw consent anytime</p>
+            <p><strong>Legitimate Interest:</strong> For app functionality, analytics, and improvements</p>
+            <p><strong>Contractual Necessity:</strong> To provide the wallpaper services you request</p>
+          </div>
+
+          <div class="highlight-box">
+            <p><strong>Control Options:</strong>
+              <ul>
+                <li><strong>Notifications:</strong> Turn off in app settings or device settings</li>
+                <li><strong>Analytics:</strong> Disable through Firebase opt-out mechanisms</li>
+                <li><strong>Data Collection:</strong> Uninstall app to remove all data</li>
+              </ul>
+            </p>
+          </div>
+        </section>
+
+        <section id="user-rights" class="section">
+          <h2><i>👤</i> Your Privacy Rights</h2>
+          <p>You have the following rights regarding your data:</p>
+          
+          <div class="user-rights-grid">
+            <div class="right-card">
+              <div class="right-icon">🔍</div>
+              <div class="permission-title">Right to Access</div>
+              <p>Know what data we collect</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-icon">✋</div>
+              <div class="permission-title">Right to Control</div>
+              <p>Control notifications and data</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-icon">🔕</div>
+              <div class="permission-title">Control Notifications</div>
+              <p>Disable notifications anytime</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-icon">🗑️</div>
+              <div class="permission-title">Right to Delete</div>
+              <p>Delete downloaded wallpapers</p>
+            </div>
+          </div>
+
+          <p>To exercise any of these rights, please contact us using the information below.</p>
+        </section>
+
+        <section id="data-retention" class="section">
+          <h2><i>⏰</i> Data Retention</h2>
+          <p>We retain your information only for as long as necessary:</p>
+          <ul>
+            <li><strong>Anonymous usage data:</strong> Up to 12 months</li>
+            <li><strong>Crash reports:</strong> 6 months</li>
+            <li><strong>Downloaded wallpapers:</strong> Stored locally on your device until you delete them</li>
+          </ul>
+          
+          <div class="highlight-box">
+            <p><strong>Note:</strong> You can remove all app data by uninstalling the app from your device.</p>
+          </div>
+        </section>
+        
+        <section id="security" class="section">
+          <h2><i>🔒</i> Security & Storage</h2>
+          <p>We take your privacy seriously:</p>
+          <ul>
+            <li>We don't store personal data on our servers</li>
+            <li>Wallpapers are saved only on your device when you download them</li>
+            <li>Anonymous analytics are stored securely by our partners</li>
+            <li>We use industry-standard security practices</li>
+            <li>All data transmissions are encrypted</li>
+          </ul>
+        </section>
+        
+        <section id="children" class="section">
+          <h2><i>👶</i> Children's Privacy</h2>
+          <p>Our app is designed for teens and adults (13 years and older).</p>
+          <p>We don't knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us immediately.</p>
+          
+          <div class="highlight-box">
+            <p><strong>For Parents:</strong> If you're a parent and believe your child is using our app, you can contact us to request deletion of any potential data.</p>
+          </div>
+        </section>
+        
+        <section id="changes" class="section">
+          <h2><i>🔄</i> Policy Changes</h2>
+          <p>We may update this Privacy Policy occasionally to reflect changes in our practices or for other operational, legal, or regulatory reasons.</p>
+          <p>When we make changes, we'll update the "Effective Date" at the top of this policy and notify you within the app.</p>
+          
+          <div class="highlight-box">
+            <p><strong>Continued Use:</strong> Your continued use of the app after any changes indicates your acceptance of the updated policy.</p>
+          </div>
+        </section>
+        
+        <section id="contact" class="section">
+          <h2><i>📞</i> Contact Us</h2>
+          <p>If you have any questions about this Privacy Policy or our practices, please don't hesitate to reach out:</p>
+          
+          <div class="contact-card">
+            <h3>Get In Touch</h3>
+            <p>We're here to help with any questions or concerns about your privacy. We typically respond within 7-10 business days.</p>
+            
+            <div class="contact-info">
+              <div class="contact-item">
+                <span>👤</span>
+                <span>Rajiv Kumar</span>
+              </div>
+              <div class="contact-item">
+                <span>📧</span>
+                <span>rajivsap1520@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <span>📱</span>
+                <span>Developer of WallpaperHub</span>
+              </div>
+            </div>
+          </div>
+
+          <p style="margin-top: 20px;">If you have concerns about our data practices, you have the right to lodge a complaint with your local data protection authority.</p>
+        </section>
+      </main>
+    </div>
+    
+    <footer>
+      <p>© 2025 WallpaperHub | Developed by Rajiv Kumar</p>
+      <p>This policy was last updated on 10 November 2025</p>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        document.querySelectorAll('.nav-link').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Add active class to clicked link
+        this.classList.add('active');
+        
+        // Scroll to section
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetSection.offsetTop - 20,
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Update active nav link on scroll
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('.section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let currentSection = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 100)) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
