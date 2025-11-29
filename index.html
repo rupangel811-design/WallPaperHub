@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WallpaperHub - Beautiful AI + HD Wallpapers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-navy: #0A0F1F;
+            --light-gray: #E6E9F0;
+            --soft-blue: #3E5CFF;
+            --sky-blue: #0EA5E9;
+            --border-color: #1C243A;
+            --card-bg: #12182F;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--dark-navy);
+            color: var(--light-gray);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--dark-navy);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--soft-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--soft-blue);
+            text-shadow: 0 0 8px rgba(62, 92, 255, 0.5);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #0d1430 100%);
+        }
+        
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--light-gray);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #b0b8d0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--soft-blue);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(62, 92, 255, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: #2a4aff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(62, 92, 255, 0.4);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--dark-navy);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--light-gray);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--soft-blue);
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--light-gray);
+        }
+        
+        .feature-card p {
+            color: #b0b8d0;
+        }
+        
+        /* Privacy Highlights */
+        .privacy {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0d1430 0%, var(--dark-navy) 100%);
+        }
+        
+        .privacy-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .privacy-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+        
+        .privacy-list {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .privacy-list ul {
+            list-style: none;
+        }
+        
+        .privacy-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .privacy-list i {
+            color: #4CAF50;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .policy-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .policy-button {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 1px solid var(--soft-blue);
+            color: var(--soft-blue);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .policy-button:hover {
+            background-color: rgba(62, 92, 255, 0.1);
+        }
+        
+        /* App Permissions */
+        .permissions {
+            padding: 80px 0;
+            background-color: var(--dark-navy);
+        }
+        
+        .permissions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        
+        .permission-item {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .permission-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: var(--soft-blue);
+        }
+        
+        /* Gallery */
+        .gallery {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #0d1430 100%);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 200px;
+            background-color: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .gallery-placeholder {
+            color: #b0b8d0;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--dark-navy);
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .developer {
+            margin-top: 30px;
+            font-style: italic;
+            color: #b0b8d0;
+        }
+        
+        /* Third Party Services */
+        .services {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0d1430 0%, var(--dark-navy) 100%);
+        }
+        
+        .services-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .service-item {
+            text-align: center;
+            max-width: 300px;
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--soft-blue);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--dark-navy);
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            color: #b0b8d0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #080C1A;
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: var(--soft-blue);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #b0b8d0;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--soft-blue);
+            text-shadow: 0 0 8px rgba(62, 92, 255, 0.3);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            color: var(--light-gray);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--soft-blue);
+            transform: scale(1.1);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: #b0b8d0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .privacy-content {
+                flex-direction: column;
+            }
+            
+            .privacy-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .policy-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background Circle -->
+                        <path fill="#0EA5E9" d="M60,0A60,60 0,1 1,0 60A60,60 0,1 1,60 0Z" fill-rule="evenodd" />
+                        <!-- Mountain Icon -->
+                        <path fill="#FFFFFF" d="M30,80 L50,40 L70,60 L90,30 L90,80 Z" />
+                        <!-- Sun Icon -->
+                        <path fill="#FFFFFF" d="M85,25 A10,10 0,1 1,65 25A10,10 0,1 1,85 25Z" />
+                    </svg>
+                    WallpaperHub
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <svg class="hero-logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background Circle -->
+                <path fill="#0EA5E9" d="M60,0A60,60 0,1 1,0 60A60,60 0,1 1,60 0Z" fill-rule="evenodd" />
+                <!-- Mountain Icon -->
+                <path fill="#FFFFFF" d="M30,80 L50,40 L70,60 L90,30 L90,80 Z" />
+                <!-- Sun Icon -->
+                <path fill="#FFFFFF" d="M85,25 A10,10 0,1 1,65 25A10,10 0,1 1,85 25Z" />
+            </svg>
+            <h1>Beautiful AI + HD Wallpapers.<br>Zero Privacy Risk. 100% Free.</h1>
+            <p>Discover stunning wallpapers generated by AI and fetched from trusted sources like Pexels. No login required. No personal data collected — ever.</p>
+            <a href="#" class="cta-button">Download App</a>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Wallpapers</h3>
+                    <p>High-quality wallpapers generated within the app using AI tools. No personal data included.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                    <h3>API Wallpapers</h3>
+                    <p>HD wallpapers fetched from trusted partners like Pexels API.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast & Smooth</h3>
+                    <p>Optimized loading, lightweight performance, and clean browsing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privacy Friendly</h3>
+                    <p>No login. No tracking. No personal data. Just wallpapers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Highlights -->
+    <section class="privacy" id="privacy">
+        <div class="container">
+            <h2 class="section-title">Privacy Highlights</h2>
+            <div class="privacy-content">
+                <div class="privacy-text">
+                    <p>At WallpaperHub, your privacy is our top priority. We've designed our app to provide beautiful wallpapers without compromising your personal information.</p>
+                    <div class="policy-buttons">
+                        <a href="privacy-policy.html" class="policy-button">View Privacy Policy</a>
+                        <a href="terms-conditions.html" class="policy-button">View Terms & Conditions</a>
+                    </div>
+                </div>
+                <div class="privacy-list">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> No Signup / Login Needed</li>
+                        <li><i class="fas fa-check-circle"></i> No Personal Information Collected</li>
+                        <li><i class="fas fa-check-circle"></i> Only Anonymous Analytics (Firebase)</li>
+                        <li><i class="fas fa-check-circle"></i> Wallpapers Saved Only on Your Device</li>
+                        <li><i class="fas fa-check-circle"></i> Safe Integration With Pexels API</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Permissions -->
+    <section class="permissions">
+        <div class="container">
+            <h2 class="section-title">App Permissions</h2>
+            <p style="text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">To function properly, the app requires these permissions. No sensitive or personal data is accessed.</p>
+            <div class="permissions-grid">
+                <div class="permission-item">
+                    <div class="permission-icon">
+                        <i class="fas fa-save"></i>
+                    </div>
+                    <h3>Storage Access</h3>
+                    <p>Save wallpapers to your device</p>
+                </div>
+                <div class="permission-item">
+                    <div class="permission-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Set Wallpaper</h3>
+                    <p>Apply wallpapers to Home/Lock screen</p>
+                </div>
+                <div class="permission-item">
+                    <div class="permission-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Internet Access</h3>
+                    <p>Load wallpapers and content</p>
+                </div>
+                <div class="permission-item">
+                    <div class="permission-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Notifications</h3>
+                    <p>Optional alerts about new wallpapers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">App Screenshots</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-image" style="font-size: 40px; margin-bottom: 10px;"></i>
+                        <p>AI-generated wallpapers</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-image" style="font-size: 40px; margin-bottom: 10px;"></i>
+                        <p>Pexels API wallpapers</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-image" style="font-size: 40px; margin-bottom: 10px;"></i>
+                        <p>App preview</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-image" style="font-size: 40px; margin-bottom: 10px;"></i>
+                        <p>App interface</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About WallpaperHub</h2>
+            <div class="about-content">
+                <p>WallpaperHub is created to bring you beautiful wallpapers without compromising your privacy. We don't require accounts, don't collect personal info, and provide a smooth, clean experience for everyone.</p>
+                <p class="developer">Made with ❤️ by Rajiv Kumar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Third Party Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Third-Party Services</h2>
+            <div class="services-content">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Pexels API</h3>
+                    <p>HD wallpaper images</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Firebase (Google)</h3>
+                    <p>Notifications, crash reports & anonymous analytics</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">Your data may be processed respecting international privacy standards.</p>
+            <div class="policy-buttons" style="justify-content: center; margin-top: 30px;">
+                <a href="privacy-policy.html" class="policy-button">Privacy Policy</a>
+                <a href="terms-conditions.html" class="policy-button">Terms & Conditions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <p><strong>Developer:</strong> Rajiv Kumar</p>
+                <p><strong>Email:</strong> rajivsap1520@gmail.com</p>
+                <p>WallpaperHub App Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WallpaperHub</h3>
+                    <p>Beautiful wallpapers, zero privacy risk.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-conditions.html">Terms & Conditions</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Developer: Rajiv Kumar</p>
+                    <p>Email: rajivsap1520@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 WallpaperHub – Developed by Rajiv Kumar. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
